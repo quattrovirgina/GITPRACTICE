@@ -31,7 +31,7 @@ public class Car {
 
 class CarTest {
     public static void main(String[] args) {
-        Car car1 = new Car();
+        Car car1 = new Car(); // public car라는 생성자를 호출
         Car car2 = new Car("BLUE");
 
         car1.printmyself(); // color: whilt, geartype=auto, door = 4;

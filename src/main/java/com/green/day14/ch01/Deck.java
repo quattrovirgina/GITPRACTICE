@@ -5,7 +5,7 @@ public class Deck {
 
     public Deck() {
         cards = new Card3[52];
-        String[] category = { "SPADE", "DIAMOND", "HEART", "CLUB" }; // String[] number로 번호생성
+        String[] category = { "SPADE", "DIAMOND", "HEART", "CLUB" };
 
         int idx = 0;
 
