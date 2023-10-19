@@ -1,4 +1,5 @@
-package com.green.day15.ch01;
+package com.green.day16.ch01;
+
 
 class Card {
     static final int KINDMAX = 4; // 카드 무늬의 수
@@ -41,17 +42,12 @@ class Deck {
 
     public Deck() {
         int idx = 0;
-        for(int i = 1; i <= Card.KINDMAX; i++) {
-            for(int j = 1; j <= Card.NUMMAX; j++) {
+        for (int i = 1; i <= Card.KINDMAX; i++) {
+            for (int j = 1; j <= Card.NUMMAX; j++) {
                 newone[idx++] = new Card(i, j);
 
             }
         }
-
-        for(Card ca : newone) { // newone이라는 배열 전체에 대한 ca라는 변수는
-            System.out.println(ca); // println으로 ca를 출력한다
-        }
-
     }
 
     public Card pick(int n1) {
@@ -59,19 +55,36 @@ class Deck {
     }
 
     public Card pick() {
-        int n2 = (int)(Math.random() * CARDNUM);
+        int n2 = (int) (Math.random() * CARDNUM);
 
         return newone[n2];
     }
 
-}
-public class DeckTest {
-    public static void main(String[] args) {
-        Deck de = new Deck();
-        Card c1 = de.pick(51);
-        System.out.println(c1);
-        Card c2 = de.pick();
-        System.out.println("--------");
-        System.out.println(c2);
+    public void mixitup() {
+        int turn;
+        int cnt = 1;
+        int i = 0;
+        do {
+
+            turn = (int) (Math.random() * CARDNUM);
+
+            Card temp;
+
+            temp = newone[i];
+            newone[i] = newone[turn];
+            newone[turn] = temp;
+
+            System.out.println(newone[i]+"-------------------"+cnt++);
+            i++;
+
+        } while(i != CARDNUM);
     }
- }
+}
+
+public class Shuffle {
+    public static void main(String[] args) {
+        Deck dec = new Deck();
+        dec.mixitup();
+    }
+}
+
