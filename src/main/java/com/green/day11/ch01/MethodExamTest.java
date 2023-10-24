@@ -12,7 +12,7 @@ public class MethodExamTest { // 패키지 다르면 같은이름이어도 상�
 
         String season = met.getSeason(13);
         String season2 = met.getSeasonV2(3);
-        System.out.println(season);
+        System.out.println();
         System.out.println(season2);
 
         // 3, 4, 5는 봄, 6,7,8은 여름, 9,10,11은 가을, 12,1,2는 겨울, 나머지는 없음
